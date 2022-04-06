@@ -9,23 +9,24 @@ class Player:
 
     def role_choice(self):
         print('selct a choice')
+        gesetures = ['rock', 'Paper', 'scissors', 'spock', 'lizard']
         print('1 = rock, 2 = paper, 3 = scissors, 4 = spock, 5 = lizard')
         roll = ''
         while roll == '':
             user_input = input()
             if user_input == '1':
-                roll = 'rock'
+                roll = gesetures[0]
             elif user_input == '2':
-                roll = 'paper'
+                roll = gesetures[1]
             elif user_input == '3':
-                roll = 'scissors'
+                roll = gesetures[2]
             elif user_input == '4':
-                roll = 'spock'
+                roll = gesetures[3]
             elif user_input == '5':
-                roll = 'lizard'
+                roll = gesetures[4]
             else:
                 print('invalid input')
         return roll
 
-
+    
 

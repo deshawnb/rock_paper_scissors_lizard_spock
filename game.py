@@ -7,7 +7,7 @@ class Game:
         self.welcome_message()
         self.rules()
         self.gamemode = self.pick_gamemode()
-        self.gameplay()
+        self.winner = self.gameplay()
     def welcome_message(self):
         print('Welcome to Rock, Paper, Scissors, Lizard, Spock!')
 
@@ -125,8 +125,7 @@ class Game:
                 print("It's a draw!")
             else:
                 print('Error')
-        if player_two_wins > 2:
-            return player_two.name
-        elif player_one_wins > 2:
-            return player_one.name
-Game()
+        if player_two_wins >= 2:
+            print(f'The winner is {player_two.name}')
+        elif player_one_wins >= 2:
+            print(f'The winner is {player_one.name}')

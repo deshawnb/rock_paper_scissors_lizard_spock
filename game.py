@@ -9,3 +9,5 @@ class Game:
         pass
     def gamemode(self):
         pass
+    def gameplay(self):
+        pass

@@ -25,7 +25,6 @@ class Player:
                 roll = 'lizard'
             else:
                 print('invalid input')
-        print(roll)
         return roll
 
 

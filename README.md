@@ -1,1 +1,1 @@
-# rock_raper_scissors_lizard_spock
+# rock_paper_scissors_lizard_spock

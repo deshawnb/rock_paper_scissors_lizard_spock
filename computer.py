@@ -4,7 +4,7 @@ class Computer:
         self.name = self.name_choice()
     
     def name_choice(self):
-        names = ['Bob', 'John', 'Meg', 'Lois']
+        names = ['Bob', 'John', 'Meg', 'Lois', 'Brian', 'Peter', 'Chris', 'Stewie']
         selected_name = random.choice(names)
         return selected_name
 

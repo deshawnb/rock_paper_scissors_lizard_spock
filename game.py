@@ -38,7 +38,7 @@ class Game:
         player_one_wins = 0
         player_two_wins = 0
         games_played = 0
-        while games_played < 3 and player_one_wins < 2 and player_two_wins < 2:
+        while games_played < 3:
             player_one_choice = player_one.role_choice()
             player_two_choice = player_two.role_choice()
             if player_one_choice.lower() == 'rock' and player_two_choice.lower() == 'scissors':
@@ -128,4 +128,4 @@ class Game:
         if player_two_wins >= 2:
             print(f'The winner is {player_two.name}')
         elif player_one_wins >= 2:
-            print(f'The winner is {player_one.name}')
+            print(f'the winner is {player_one.name}')

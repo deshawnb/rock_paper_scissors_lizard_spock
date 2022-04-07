@@ -1,9 +1,5 @@
-from gestures import Gestures
-
-class Player(Gestures):
+class Player():
     def __init__(self):
-
-        self.name = self.name_choice()
         self.gestures = ['rock', 'Paper', 'scissors', 'spock', 'lizard']
         super().__init__()
 

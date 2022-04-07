@@ -1,4 +1,3 @@
-from player import Player
 from human import Human
 from computer import Computer
 
@@ -22,7 +21,7 @@ class Game:
         if self.gamemode == '1':
             player_one = Computer()
         elif self.gamemode == '2':
-            player_one = Player()
+            player_one = Human()
         return player_one
 
     def pick_gamemode(self):
@@ -42,9 +41,7 @@ class Game:
 
     def gameplay(self, player_one):
         player_one = player_one
-        player_one.name_choice()
         player_two = Human()
-        player_two.name_choice()
         player_one_wins = 0
         player_two_wins = 0
 

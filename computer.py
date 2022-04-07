@@ -1,7 +1,8 @@
 import random
-class Computer:
+from player import Player
+class Computer(Player):
     def __init__(self):
-        self.name = self.name_choice()
+        super().__init__()
     
     def name_choice(self):
         names = ['Bob', 'John', 'Meg', 'Lois', 'Brian', 'Peter', 'Chris', 'Stewie']

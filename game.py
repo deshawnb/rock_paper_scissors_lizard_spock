@@ -42,7 +42,9 @@ class Game:
 
     def gameplay(self, player_one):
         player_one = player_one
+        player_one.name_choice()
         player_two = Human()
+        player_two.name_choice()
         player_one_wins = 0
         player_two_wins = 0
         while player_one_wins < 2 and player_two_wins < 2:

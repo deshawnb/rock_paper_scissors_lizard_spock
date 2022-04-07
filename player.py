@@ -1,6 +1,6 @@
 class Player:
     def __init__(self):
-        self.name = self.name_choice()
+        pass
 
     def name_choice(self):
         print('Enter a name:')

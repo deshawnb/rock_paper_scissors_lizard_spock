@@ -12,5 +12,6 @@ class Computer(Gestures):
         return selected_name
 
     def role_choice(self):
-        selected_role = random.choice(self.gestures)
+        gestures = ['rock', 'Paper', 'scissors', 'spock', 'lizard']
+        selected_role = random.choice(gestures)
         return selected_role

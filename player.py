@@ -8,7 +8,7 @@ class Player:
         return user_input
 
     def role_choice(self):
-        print('selct a choice')
+        print(f'{self.name} selct a choice')
         gesetures = ['rock', 'Paper', 'scissors', 'spock', 'lizard']
         print('1 = rock, 2 = paper, 3 = scissors, 4 = spock, 5 = lizard')
         roll = ''

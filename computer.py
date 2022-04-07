@@ -4,6 +4,7 @@ from gestures import Gestures
 class Computer(Gestures):
     def __init__(self):
         self.name = self.name_choice()
+        super().__init__()
     
     def name_choice(self):
         names = ['Bob', 'John', 'Meg', 'Lois', 'Brian', 'Peter', 'Chris', 'Stewie']

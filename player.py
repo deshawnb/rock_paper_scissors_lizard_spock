@@ -3,6 +3,7 @@ from gestures import Gestures
 class Player(Gestures):
     def __init__(self):
         self.name = self.name_choice()
+        super().__init__()
 
     def name_choice(self):
         print('Enter a name:')

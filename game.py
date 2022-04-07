@@ -7,7 +7,7 @@ class Game:
         self.welcome_message()
         self.rules()
         self.gamemode = self.pick_gamemode()
-        self.winner = self.gameplay()
+
 
     def welcome_message(self):
         print('Welcome to Rock, Paper, Scissors, Lizard, Spock!')
@@ -15,6 +15,16 @@ class Game:
     def rules(self):
         print('The rules of the game are as follows:\nThe game is best of three, not counting draws.\nRock beats scissors and lizard\nPaper beats rock and spock\nScissors beats paper and lizard\nLizard beats spock and paper\nSpock beats scissors and rock')
     
+    def run_game(self):       
+        self.announce_winner(self.gameplay(self.assign_players()))
+
+    def assign_players(self):
+        if self.gamemode == '1':
+            player_one = Computer()
+        elif self.gamemode == '2':
+            player_one = Player()
+        return player_one
+
     def pick_gamemode(self):
         valid_input = 0
         while valid_input == 0:
@@ -29,14 +39,10 @@ class Game:
                 return selected_gamemode
             else:
                 print('Sorry, input not recognized, please try again.')
-    
-    def gameplay(self):
-        player_one = Player()
-        player_two = ()
-        if self.gamemode == '1':
-            player_two = Computer()
-        elif self.gamemode == '2':
-            player_two = Human()
+
+    def gameplay(self, player_one):
+        player_one = player_one
+        player_two = Human()
         player_one_wins = 0
         player_two_wins = 0
         while player_one_wins < 2 and player_two_wins < 2:
@@ -107,6 +113,10 @@ class Game:
             else:
                 print('Error')
         if player_two_wins >= 2:
-            print(f'The winner is {player_two.name}')
+            return player_two.name
         elif player_one_wins >= 2:
-            print(f'The winner is {player_one.name}')
+            return player_one.name
+
+    def announce_winner(self, player_name):
+        print(f'The winner of the best of three rounds is {player_name}!')
+

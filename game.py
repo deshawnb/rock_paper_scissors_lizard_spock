@@ -8,11 +8,12 @@ class Game:
         self.rules()
         self.gamemode = self.pick_gamemode()
         self.winner = self.gameplay()
+
     def welcome_message(self):
         print('Welcome to Rock, Paper, Scissors, Lizard, Spock!')
 
     def rules(self):
-        print('The rules of the game are as follows:\nRock beats scissors and lizard\nPaper beats rock and spock\nScissors beats paper and lizard\nLizard beats spock and paper\nSpock beats scissors and rock')
+        print('The rules of the game are as follows:\nThe game is best of three, not counting draws.\nRock beats scissors and lizard\nPaper beats rock and spock\nScissors beats paper and lizard\nLizard beats spock and paper\nSpock beats scissors and rock')
     
     def pick_gamemode(self):
         valid_input = 0
@@ -28,6 +29,7 @@ class Game:
                 return selected_gamemode
             else:
                 print('Sorry, input not recognized, please try again.')
+    
     def gameplay(self):
         player_one = Player()
         player_two = ()
@@ -37,90 +39,69 @@ class Game:
             player_two = Human()
         player_one_wins = 0
         player_two_wins = 0
-        games_played = 0
-        while games_played < 3 and player_one_wins < 2 and player_two_wins < 2:
+        while player_one_wins < 2 and player_two_wins < 2:
             player_one_choice = player_one.role_choice()
             player_two_choice = player_two.role_choice()
             if player_one_choice.lower() == 'rock' and player_two_choice.lower() == 'scissors':
                 print(f'{player_one.name} crushes {player_two.name}!')
                 player_one_wins += 1
-                games_played += 1
             elif player_one_choice.lower() == 'rock' and player_two_choice.lower() == 'lizard':
                 print(f'{player_one.name} crushed {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1               
             elif player_one_choice.lower() == 'paper' and player_two_choice.lower() == 'rock':
                 print(f'{player_one.name} covered {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1              
             elif player_one_choice.lower() == 'paper' and player_two_choice.lower() == 'spock':
                 print(f'{player_one.name} disproved {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1           
             elif player_one_choice.lower() == 'scissors' and player_two_choice.lower() == 'paper':
                 print(f'{player_one.name} cut {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1              
             elif player_one_choice.lower() == 'scissors' and player_two_choice.lower() == 'lizard':
                 print(f'{player_one.name} decapitated {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1            
             elif player_one_choice.lower() == 'lizard' and player_two_choice.lower() == 'spock':
                 print(f'{player_one.name} poisoned {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1             
             elif player_one_choice.lower() == 'lizard' and player_two_choice.lower() == 'paper':
                 print(f'{player_one.name} ate {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1             
             elif player_one_choice.lower() == 'spock' and player_two_choice.lower() == 'scissors':
                 print(f'{player_one.name} smashed {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1            
             elif player_one_choice.lower() == 'spock' and player_two_choice.lower() == 'rock':
                 print(f'{player_one.name} vaporized {player_two.name}!')
-                player_one_wins += 1
-                games_played += 1
+                player_one_wins += 1              
             elif player_two_choice.lower() == 'rock' and player_one_choice.lower() == 'scissors':
                 print(f'{player_two.name} crushes {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1              
             elif player_two_choice.lower() == 'rock' and player_one_choice.lower() == 'lizard':
                 print(f'{player_two.name} crushed {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1              
             elif player_two_choice.lower() == 'paper' and player_one_choice.lower() == 'rock':
                 print(f'{player_two.name} covered {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1              
             elif player_two_choice.lower() == 'paper' and player_one_choice.lower() == 'spock':
                 print(f'{player_two.name} disproved {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1             
             elif player_two_choice.lower() == 'scissors' and player_one_choice.lower() == 'paper':
                 print(f'{player_two.name} cut {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1               
             elif player_two_choice.lower() == 'scissors' and player_one_choice.lower() == 'lizard':
                 print(f'{player_two.name} decapitated {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1              
             elif player_two_choice.lower() == 'lizard' and player_one_choice.lower() == 'spock':
                 print(f'{player_two.name} poisoned {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1              
             elif player_two_choice.lower() == 'lizard' and player_one_choice.lower() == 'paper':
                 print(f'{player_two.name} ate {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1              
             elif player_two_choice.lower() == 'spock' and player_one_choice.lower() == 'scissors':
                 print(f'{player_two.name} smashed {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1             
             elif player_two_choice.lower() == 'spock' and player_one_choice.lower() == 'rock':
                 print(f'{player_two.name} vaporized {player_one.name}!')
-                player_two_wins += 1
-                games_played += 1
+                player_two_wins += 1              
             elif player_two_choice.lower() == player_two_choice.lower():
                 print("It's a draw!")
             else:

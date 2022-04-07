@@ -47,6 +47,7 @@ class Game:
         player_two.name_choice()
         player_one_wins = 0
         player_two_wins = 0
+
         while player_one_wins < 2 and player_two_wins < 2:
             player_one_choice = player_one.role_choice()
             player_two_choice = player_two.role_choice()
@@ -121,4 +122,5 @@ class Game:
 
     def announce_winner(self, player_name):
         print(f'The winner of the best of three rounds is {player_name}!')
+
 

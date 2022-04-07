@@ -1,6 +1,8 @@
 import random
 from player import Player
-class Computer(Player):
+from gestures import Gestures
+
+class Computer(Gestures):
     def __init__(self):
         super().__init__()
     
@@ -10,6 +12,5 @@ class Computer(Player):
         return selected_name
 
     def role_choice(self):
-        roles = ['Lizard', 'Paper', 'Rock', 'Scissors', 'Spock']
-        selected_role = random.choice(roles)
+        selected_role = random.choice(self.gestures)
         return selected_role
